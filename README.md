@@ -8,14 +8,14 @@ from csphere/nginx
 add . /app
 ```
 
-### 构建运行
+## 构建运行
 ```
 docker build -t my-php-app .
 docker run -d --name php -p 8080:80 csphere/php-fpm
 docker run -d --name my-php-app --net=container:php csphere/nginx
 ```
 
-### 安装额外扩展
+## 安装额外扩展
 由于base镜像使用了alpine，用的是apk包管理工具，你可以进入alpine容器，来搜索对应的php扩展包
 
 ```
@@ -29,7 +29,7 @@ from php-fpm:5.6
 run apk add php-myextension
 ```
 
-### 开发环境使用
+## 开发环境使用
 在开发环境为了更加高效，避免每次代码更新都进入build流程，可以：
 
 ```
@@ -58,7 +58,7 @@ docker run -d -p 8080:80 -v /myapp:/app -e MYSQL_MASTER_HOST=192.168.1.2 -e MYSQ
 
 使用名字和环境变量，各有优劣。
 
-### 生产环境使用
+## 生产环境使用
 通过Dockerfile构建出应用镜像之后，在生产环境部署时，需要注意：
 
 - 后端服务的名字，如数据库dbhost，redis主机的host等。由于我们已经在前面规范好了名字，所以部署到生产环境 就比较容易了。
@@ -68,4 +68,12 @@ docker run -d -p 8080:80 -v /myapp:/app -e MYSQL_MASTER_HOST=192.168.1.2 -e MYSQ
 docker run -d -p 80:80 --log-driver=syslog --log-opt address=udp://syslogserver:514 my-php-app
 ```
 这个时候docker logs是没有日志输出的，日志都转存到syslog server了
+
+## 授权和法律
+
+该镜像由希云制造，未经允许，任何第三方企业和个人，不得重新分发。违者必究。
+
+## 支持和反馈
+
+该镜像由希云为企业客户提供技术支持和保障，任何问题都可以直接反馈到: `docker@csphere.cn`
 
