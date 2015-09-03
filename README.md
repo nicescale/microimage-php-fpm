@@ -1,4 +1,6 @@
-# 如何使用该镜像
+![php-fpm](https://csphere.cn/assets/d7b34ab5-5bfe-4909-aba1-17dc23a570fc)
+
+## 如何使用该镜像
 
 php-fpm一般是配合nginx镜像一起使用
 
