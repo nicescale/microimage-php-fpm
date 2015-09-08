@@ -4,7 +4,7 @@ maintainer william <wlj@nicescale.com>
 
 label service=php
 
-run apk add --update php-fpm php-curl php-sockets php-cli php-openssl
+run apk add --update php-fpm php-curl php-sockets php-cli php-openssl php-mysqli
 
 workdir /app
 
