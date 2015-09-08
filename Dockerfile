@@ -9,6 +9,7 @@ run apk add --update php-fpm php-curl php-sockets php-cli php-openssl php-mysqli
 workdir /app
 
 add php-fpm.conf /etc/php/php-fpm.conf
+add docker-php-ext-install /usr/local/bin/
 
 expose 80 443 9000
 
