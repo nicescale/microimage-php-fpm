@@ -1,12 +1,13 @@
 #!/bin/bash
 
-set -e
+set -xe
 
 docker rm -f "$CON_NAME" > /dev/null 2>&1 || true
 docker run -d --name $CON_NAME $IMAGE
+sleep 1
 
 PROGRAM=hello
-cat << EOF > /tmp/$PROGRAM.php
+cat <<EOF > /tmp/$PROGRAM.php
 <?php
 echo "Hello cSphere!"
 ?>
