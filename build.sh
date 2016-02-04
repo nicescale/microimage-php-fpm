@@ -1,11 +1,11 @@
 #!/bin/bash
 
-set -e
+set -xe
 
 export CON_NAME=php-fpm_t
 export REG_URL=index.csphere.cn
 export IMAGE=microimages/php-fpm
-export TAGS="5.6 5.6.10"
+export TAGS="5.6 5.6.17"
 export BASE_IMAGE=microimages/alpine
 
 docker pull $BASE_IMAGE
